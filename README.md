@@ -35,7 +35,8 @@ All 121 built-in songs load and play on the Vita with notes in sync with the mus
 | Gameplay | All built-in songs playable; hold notes, sparks and lane borders drawn natively |
 | Audio | Music, notes, character voices and UI sounds working |
 | Loading | Game data packed into a single `game.pck` |
-| Custom maps | Present, interface rework planned |
+| Custom maps | Same interface as the song select |
+| Languages | English, Spanish and Brazilian Portuguese |
 | Public VPK / Release | Not available yet |
 
 _If you enjoy my work, consider supporting the development!_
@@ -60,6 +61,9 @@ _If you enjoy my work, consider supporting the development!_
   <img src="assets/screenshots/welcome.png" width="45%" alt="Tenna welcome dialog">
   <br>
   <img src="assets/screenshots/show_opening.png" width="45%" alt="Show opening">
+  <img src="assets/screenshots/tutorial.png" width="45%" alt="Tenna's tutorial">
+  <br>
+  <img src="assets/screenshots/credits.png" width="45%" alt="Creator links">
   <img src="assets/screenshots/show_end.png" width="45%" alt="Audience applause">
 </p>
 
@@ -76,7 +80,11 @@ The Vita renderer only draws rectangles and textured sprites, so every new scree
 - **Options:** tabbed screen (Audio, Game, Controls, Data) for volumes, latency offset, vibration and button prompts. Talking to Swatch in the café opens it after a short dialog.
 - **Welcome messages:** Tenna delivers the first-time and update notes as dialog instead of text panels.
 - **Song select:** chapter tabs on L / R, the SOUL cursor, cover art, difficulty, composer, best score with full-combo colours and the cover-music toggle.
-- **The show:** Tenna announces each song before it starts, missed notes briefly dip the music, and the Chapter 3 audience applauds at the end.
+- **The show:** every song opens on the real stage like the first Lightners Live in Chapter 3 (band in silhouette, spotlights, crowd, Tenna's announcement), with Tenna's tutorial on the first play.
+- **Fun-O-Meter:** the Chapter 3 meter fills with good playing; at half, Star Power turns the notes orange for double points.
+- **Results:** a blue results screen with Retry / Café / Next song, while the Chapter 3 audience applauds.
+- **Best Songs:** a tab with ten standout DELTARUNE tracks.
+- **Languages:** English, Spanish and Brazilian Portuguese, switchable in Options.
 
 This is an **unofficial fan project**, not affiliated with or endorsed by EzioEagle, Toby Fox, Sony, or the Godot Engine project.
 
@@ -90,16 +98,14 @@ This is an **unofficial fan project**, not affiliated with or endorsed by EzioEa
 | Cross | Confirm / interact |
 | Circle | Back (hold to run in the café) |
 | L / R (menus) | Switch tabs |
-| Square | Cover music toggle in the song select |
+| Square | Cover music toggle (song select) / Star Power (during a song) |
 | Triangle (hold) | Return to the café during a song |
 
 ## Current development priorities
 
-- Rebuild the song opening as the full Chapter 3 first-show sequence and use it as the game's intro.
-- Tenna's tutorial on the first play, a darkening fade when leaving a song, and Retry / Café / Next song choices at the end.
-- The Chapter 3 popularity meter driven by accuracy, with a double-points power.
-- English, Spanish and Brazilian Portuguese interface.
-- Rework the custom maps and credits screens.
+- Confirm the new show flow, Fun-O-Meter and results screen on hardware.
+- Measure song select and gameplay frame rate on the Vita.
+- Prepare an installation method that does not redistribute the game's files.
 
 See [Development status](docs/PORT_STATUS.md).
 

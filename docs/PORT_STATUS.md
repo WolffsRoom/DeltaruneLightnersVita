@@ -14,8 +14,10 @@ These are development tests, not guarantees about a release build.
 | Options | Under test | Tabbed Deltarune-style screen; values save with the game's settings |
 | Song select | Under test | Rebuilt for speed; the old list dropped to ~23 FPS on the Vita |
 | Show opening / ending | Under test | Tenna announces each song; audience applause at the end |
-| Custom maps | Original interface | Rework planned |
-| Languages | English only | English, Spanish and Brazilian Portuguese planned |
+| Custom maps | Under test | Same interface as the song select |
+| Languages | Under test | English, Spanish and Brazilian Portuguese |
+| Fun-O-Meter / Star Power | Under test | Double points shown as a bonus; saved high scores unchanged |
+| Results screen | Under test | Blue results screen with Retry / Café / Next song |
 | Public downloadable build | Not available | No game files are distributed |
 
 ## Rendering
@@ -32,7 +34,6 @@ Music plays through the Vita's BGM audio port at 48 kHz. The MIDI note clock is 
 
 ## Known issues
 
-- Custom maps and the creator's links screen still use the original interface.
 - Store and web links do not open anything on the Vita.
 - The new screens have been tested on the PC build of the Vita data; full hardware testing is in progress.
 
