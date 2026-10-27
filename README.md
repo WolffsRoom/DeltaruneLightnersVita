@@ -48,6 +48,13 @@ _If you enjoy my work, consider supporting the development!_
 
 </div>
 
+## In motion
+
+<p align="center">
+  <img src="assets/gifs/boot_intro.gif" width="45%" alt="Game boot: Chapter 3 opening to the title menu">
+  <img src="assets/gifs/song_start.gif" width="45%" alt="Starting a song: song select and show opening">
+</p>
+
 ## Screenshots
 
 <p align="center">
