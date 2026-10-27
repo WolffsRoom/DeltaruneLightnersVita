@@ -30,7 +30,7 @@ The game's data is packed into a single `game.pck`. A small bootstrap mounts it 
 
 ## Audio and sync
 
-Music plays through the Vita's BGM audio port at 48 kHz. The MIDI note clock is calibrated against the music position once a song starts. The song opening holds the MIDI clock and the music until the curtains open, so it does not affect note timing. Missed notes only change the music volume briefly.
+Music plays through the Vita's BGM audio port at 48 kHz. The MIDI note clock is calibrated against the music position once a song starts. The song opening holds the MIDI clock and the music until the stage lights come up, so it does not affect note timing. Missed notes only change the music volume briefly.
 
 ## Known issues
 
