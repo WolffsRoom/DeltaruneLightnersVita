@@ -1,4 +1,4 @@
-<img width="960" height="544" alt="Lightners Live Plus Vita" src="assets/brand/livearea_pic.png" />
+<img width="3840" height="1732" alt="VitaLayout" src="https://github.com/user-attachments/assets/9f935670-c643-4d44-9a44-94f74d594cdb" />
 
 <p align="center">
   An experimental, unofficial port of <a href="https://ezioeagle.itch.io/lightners-live-plus"><strong>Deltarune: Lightners Live Plus</strong></a> for PlayStation Vita.
