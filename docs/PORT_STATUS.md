@@ -16,7 +16,9 @@ These are development tests, not guarantees about a release build.
 | Show opening / ending | Under test | Tenna announces each song; audience applause at the end |
 | Custom maps | Under test | Same interface as the song select |
 | Languages | Under test | English, Spanish and Brazilian Portuguese |
-| Fun-O-Meter / Star Power | Under test | Double points shown as a bonus; saved high scores unchanged |
+| Fun-O-Meter / Determination Power | Under test | Double points on screen and as a bonus; saved high scores unchanged |
+| Favourites | Under test | My Best Songs tab, SELECT to add or remove |
+| Pause / Lights Out | Under test | Select pauses the whole song; an empty Fun-O-Meter ends the show |
 | Results screen | Under test | Blue results screen with Retry / Café / Next song |
 | Public downloadable build | Not available | No game files are distributed |
 
