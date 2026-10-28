@@ -1,30 +1,27 @@
 # Development status — Lightners Live Plus for PS Vita
 
-**Public status: no public build yet.**
+**Current release: v1.0.** Tested on the PC build of the Vita data; report hardware issues with the logs in `ux0:data/deltalightplusvita/logs/`.
 
-These are development tests, not guarantees about a release build.
-
-| Area | Status | Notes |
-| --- | --- | --- |
-| Boot | Working on physical Vita | Animated 960×544 splash, then native GXM |
-| Game data | Working on physical Vita | One `game.pck` instead of ~1,600 loose files |
-| Songs | Working on physical Vita | 121 built-in songs; notes in sync with the music |
-| Hold notes | Fixed, under test | Tails, lane borders and hold sparks redrawn with rectangles and sprites |
-| Opening / title | Under test | Chapter 3 stage recreation, Start Game / Options / Credits |
-| Options | Under test | Tabbed Deltarune-style screen; values save with the game's settings |
-| Song select | Under test | Rebuilt for speed; the old list dropped to ~23 FPS on the Vita |
-| Show opening / ending | Under test | Tenna announces each song; audience applause at the end |
-| Custom maps | Under test | Same interface as the song select |
-| Languages | Under test | English, Spanish and Brazilian Portuguese |
-| Fun-O-Meter / Determination Power | Under test | Double points on screen and as a bonus; saved high scores unchanged |
-| Favourites | Under test | My Best Songs tab, SELECT to add or remove |
-| Pause / Lights Out | Under test | Select pauses the whole song; an empty Fun-O-Meter ends the show |
-| Results screen | Under test | Blue results screen with Retry / Café / Next song |
-| Public downloadable build | Not available | No game files are distributed |
+| Component | Current state |
+| :--- | :--- |
+| Boot / LiveArea | Animated 960 × 544 startup, custom LiveArea |
+| Opening | Recreation of the first Lightners Live stage from Chapter 3, then the title menu |
+| Menus | Deltarune-style title, options, song select, dialog boxes and loading screen |
+| Songs | All 121 built-in songs; notes in sync with the music; hold notes drawn natively |
+| Story mode | Songs unlock in OST order; chapters open after their final boss |
+| Fun-O-Meter / Determination Power | Touch the SOUL to activate; double points |
+| Boss battles | King, Queen, Tenna, Titan and every Undertale song; grazing gives points |
+| Results | CONCERT RESULTS with rank |
+| Trophies | 30 trophies through NoTrpDrm |
+| Audio | Music, notes, character voices and UI sounds |
+| Loading | Game data packed into a single `game.pck` |
+| Custom maps | Same interface as the song select |
+| Languages | English, Spanish and Brazilian Portuguese |
+| Patcher | Builds the Vita data from the original games and checks every file by SHA-256 |
 
 ## Rendering
 
-The Vita runtime used by this port draws rectangles and textured sprites only. Godot style boxes, panels, sliders, lines, polygons, particles and shaders do not appear on the device, so the port's interface (dialog boxes, bars, menus, sparks) is built entirely from those two primitives. Elements of the original game that relied on lines or particles were redrawn the same way.
+The Vita runtime used by this port draws rectangles and textured sprites only. Godot style boxes, panels, sliders, lines, polygons, particles and shaders do not appear on the device, so the port's interface (dialog boxes, bars, menus, sparks, bullet boards) is built entirely from those two primitives.
 
 ## Loading
 
@@ -32,16 +29,24 @@ The game's data is packed into a single `game.pck`. A small bootstrap mounts it 
 
 ## Audio and sync
 
-Music plays through the Vita's BGM audio port at 48 kHz. The MIDI note clock is calibrated against the music position once a song starts. The song opening holds the MIDI clock and the music until the stage lights come up, so it does not affect note timing. Missed notes only change the music volume briefly.
+Music plays through the Vita's BGM audio port at 48 kHz. The MIDI note clock is calibrated against the music position once a song starts. The song opening holds the MIDI clock and the music until the stage lights come up, so it does not affect note timing. Boss battles pause the lane notes only; the music keeps playing.
+
+## Patcher
+
+The patcher reads the original Lightners Live Plus `.pck` and applies small binary patches to it, and rebuilds the DELTARUNE sprites and sounds the port uses from the DELTARUNE `data.win` files. The result is compared file by file with the release build by size and SHA-256.
+
+## Trophies
+
+The trophy set (`DLLP40001_00`) is an unsigned local set for NoTrpDrm. The game drops unlocked trophy ids into `ux0:data/deltalightplusvita/trophy_queue/`, and the loader registers the set (once, with the system dialog) and unlocks them. If the setup is interrupted, trophies are disabled until `trophy_disabled` is deleted; see `logs/trophy.log`.
 
 ## Known issues
 
 - Store and web links do not open anything on the Vita.
-- The new screens have been tested on the PC build of the Vita data; full hardware testing is in progress.
+- Touch on the SOUL and the trophy setup have not been confirmed on every console yet.
 
 ## Public files policy
 
-This repository contains documentation only. No VPK, compiled port, game files or imported game caches are provided.
+This repository contains documentation only. No game files are provided; the release ships the VPK and the patcher.
 
 ## References
 
