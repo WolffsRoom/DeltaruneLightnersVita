@@ -71,7 +71,10 @@ _If you enjoy my work, consider supporting the development!_
   <img src="assets/screenshots/tutorial.png" width="45%" alt="Tenna's tutorial">
   <br>
   <img src="assets/screenshots/credits.png" width="45%" alt="Creator links">
-  <img src="assets/screenshots/show_end.png" width="45%" alt="Audience applause">
+  <img src="assets/screenshots/show_end.png" width="45%" alt="Results screen">
+  <br>
+  <img src="assets/screenshots/paused.png" width="45%" alt="Pause">
+  <img src="assets/screenshots/lights_out.png" width="45%" alt="Lights out">
 </p>
 
 <p align="center"><em>Captured from the Vita game data running on the PC test build (960 × 544).</em></p>
@@ -89,7 +92,9 @@ The Vita renderer only draws rectangles and textured sprites, so every new scree
 - **Song select:** chapter tabs on L / R, the SOUL cursor, cover art, difficulty, composer, best score with full-combo colours and the cover-music toggle.
 - **The show:** every song opens on the real stage like the first Lightners Live in Chapter 3 (band in silhouette, spotlights, crowd, Tenna's announcement), with Tenna's tutorial on the first play.
 - **Fun-O-Meter:** the Chapter 3 meter fills with good playing; at half, Star Power turns the notes orange for double points.
-- **Results:** a blue results screen with Retry / Café / Next song, while the Chapter 3 audience applauds.
+- **Results:** a blue starry results screen with Retry / Café / Next song, while the Chapter 3 audience applauds.
+- **Lights out:** if missed notes empty the Fun-O-Meter, the song stops and the crowd reacts.
+- **Pause:** Select freezes the song; Triangle exits.
 - **Best Songs:** a tab with ten standout DELTARUNE tracks.
 - **Languages:** English, Spanish and Brazilian Portuguese, switchable in Options.
 
@@ -107,6 +112,7 @@ This is an **unofficial fan project**, not affiliated with or endorsed by EzioEa
 | L / R (menus) | Switch tabs |
 | Square | Cover music toggle (song select) / Star Power (during a song) |
 | Triangle (hold) | Return to the café during a song |
+| Select | Pause / continue during a song |
 
 ## Current development priorities
 
