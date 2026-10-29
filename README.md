@@ -1,3 +1,10 @@
+<p align="center">
+  <a href="#">
+    <img  width="500" alt="LogoDeltaruneVita" src="https://img.itch.zone/aW1nLzIxMzI5NTU2LnBuZw==/original/zeVXt3.png" alt="Logo Deltarune: Lightners Live Plus PSVita Edition" width="500"/>
+
+  </a>
+</p>
+
 <img width="3840" height="1732" alt="VitaLayout" src="https://github.com/user-attachments/assets/9f935670-c643-4d44-9a44-94f74d594cdb" />
 
 <p align="center">
@@ -5,13 +12,11 @@
 </p>
 
 <p align="center">
-  <em>Powered by a customized <a href="https://github.com/WolffsRoom/godot4-vita">Godot 4 Vita</a> runtime, with native GXM 2D rendering and a Vita-made Deltarune-style show around every song.</em>
+  <em>Powered by a customized <a href="https://github.com/WolffsRoom/godot4-vita">Godot 4 Vita</a> runtime.</em>
 </p>
 
 > [!IMPORTANT]
-> This repository and its releases do **not** include the games' files. The patcher builds the Vita data from your own copies of *Deltarune: Lightners Live Plus* (free on [itch.io](https://ezioeagle.itch.io/lightners-live-plus)) and *DELTARUNE* Chapters 1–4 ([Steam](https://store.steampowered.com/app/1671210/)).
-
-
+> This repository and its releases do **not** include the games' files. The patcher builds the Vita data from your own copies of *Deltarune: Lightners Live Plus* (free on [itch.io](https://ezioeagle.itch.io/lightners-live-plus)) and *DELTARUNE* ([Steam](https://store.steampowered.com/app/1671210/)).
 <p align="center">
   <a href="#installation-guide">Installation</a> · <a href="#control-layout">Controls</a> · <a href="#screenshots">Screenshots</a> · <a href="#about-the-port">About the port</a> · <a href="#original-game-vs-ps-vita-port">PC vs. Vita</a>
 </p>
@@ -46,8 +51,6 @@ _If you enjoy my work, consider supporting the development!_
 [<img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" height="48">](https://www.buymeacoffee.com/5rsrt7j4z8f)
 
 </div>
-
-For release-specific changes, see the latest [Release](https://github.com/WolffsRoom/DeltaruneLightnersVita/releases/latest). Component-by-component status is in [Development status](docs/PORT_STATUS.md).
 
 <a id="installation-guide"></a>
 
@@ -297,4 +300,31 @@ The port runs the original Godot content through [Godot 4 Vita](https://github.c
 - [WolffsRoom / Godot 4 Vita](https://github.com/WolffsRoom/godot4-vita): Vita runtime and rendering backend.
 - [Rinnegatamante - NoTrpDrm](https://github.com/Rinnegatamante/NoTrpDrm), [VitaSDK](https://vitasdk.org) and the wider PS Vita homebrew community.
 
-This is an **unofficial fan project**, not affiliated with or endorsed by EzioEagle, Toby Fox, Sony, or the Godot Engine project.
+
+---
+
+### IA NOTICE
+
+Claude Code (Opus 5.5) and Codex (GPT-6.1 Sol) was used as a development assistant for diagnostics, implementation support, project organization and technical documentation.
+
+### LICENCES
+
+Butterscotch is distributed under the Mozilla Public License 2.0. Modified MPL-covered source files in this project remain available under the same license, with their copyright and license notices preserved. See [LICENSE](LICENSE) and the corresponding source files for details.
+
+DELTARUNE, its characters, music and assets belong to their respective owners. This project does not distribute the commercial files required to play the game.
+
+<p align="center">
+  <img src="https://64.media.tumblr.com/9a6db26df4a32c8feea6bc9a004fc339/3b52db6ecf00ab98-6e/s400x600/bbd45993bcdd2b162b21f9939b80dbf18cabfbc9.gif" alt="DELTARUNE" width="360">
+</p>
+
+<p align="center">
+  <sub>
+    DELTARUNE © Toby Fox 2018–2026. All rights reserved.<br>
+    This is an **unofficial fan project**, not affiliated with or endorsed by EzioEagle, Toby Fox, Sony, or the Godot Engine project.
+  </sub>
+</p>
+
+
+
+
+
