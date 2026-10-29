@@ -52,8 +52,6 @@ _If you enjoy my work, consider supporting the development!_
 
 </div>
 
-**v1.0 now uses PCK24.** It includes four gameplay difficulty presets, reorganized Audio and Video settings, full song titles, larger button prompts, BOSS tags, revised Tenna and Sans battles, and conversations with the stage cast. During Determination Power, note rewards are doubled and error penalties are halved. The trophy configuration now totals 960 points to match its large-set policy. See the [release notes](https://github.com/WolffsRoom/DeltaruneLightnersVita/releases/tag/v1.0) and [development status](docs/PORT_STATUS.md) for validation details and remaining issues.
-
 <a id="installation-guide"></a>
 
 <h2>
