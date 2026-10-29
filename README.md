@@ -52,6 +52,8 @@ _If you enjoy my work, consider supporting the development!_
 
 </div>
 
+**v1.0** includes four gameplay difficulty presets, reorganized Audio & Video settings, song sorting, conversations with the stage cast, and improvements to fonts and power effects. See the [release notes](https://github.com/WolffsRoom/DeltaruneLightnersVita/releases/tag/v1.0) and [development status](docs/PORT_STATUS.md) for validation details and remaining issues.
+
 <a id="installation-guide"></a>
 
 <h2>
@@ -65,6 +67,7 @@ _If you enjoy my work, consider supporting the development!_
 </h3>
 
 - A homebrew-enabled PlayStation Vita with [VitaShell](https://github.com/TheOfficialFloW/VitaShell/releases);
+- A Windows x64 PC to run the patcher;
 - [kubridge](https://github.com/TheOfficialFloW/kubridge/releases/) under `*KERNEL` in taiHEN's `config.txt`;
 - [Deltarune: Lightners Live Plus 1.6.0.2](https://ezioeagle.itch.io/lightners-live-plus) for Windows (free);
 - [DELTARUNE](https://store.steampowered.com/app/1671210/) for PC (Steam) with Chapters 1–4 installed;
@@ -81,7 +84,7 @@ ux0:tai/kubridge.skprx
   <a href="#installing-the-game"><img src="docs/readme-headings/installing-the-game.svg" alt="INSTALLING THE GAME" height="40"></a>
 </h3>
 
-1. Download `deltalightplusvita.vpk` and `Lightners Live Plus Vita Patcher v1.0.zip` from the [latest release](https://github.com/WolffsRoom/DeltaruneLightnersVita/releases/latest).
+1. Download `deltalightplusvita.vpk` and `LightnersVitaPatcher-v1.0.zip` from the [latest release](https://github.com/WolffsRoom/DeltaruneLightnersVita/releases/latest).
 2. Run `LightnersVitaPatcher.exe`, drag the **Lightners Live Plus** folder (with `Deltarune Lightners Live Plus.pck`) into the window, then the **DELTARUNE** Steam folder (with `chapter1_windows` … `chapter4_windows`), and wait. Every generated file is checked by SHA-256.
 3. Copy the generated `deltalightplusvita` folder to `ux0:data/` on the Vita.
 4. Install `deltalightplusvita.vpk` using VitaShell.
@@ -92,7 +95,7 @@ The final path must be:
 ux0:data/deltalightplusvita/game_data/
 ```
 
-When updating, back up `game_data/custom` first if you have custom maps there.
+When updating, regenerate the data with the v1.0 patcher and install the matching VPK. Back up `game_data/custom` before copying files to the Vita; saves and port settings do not need to be reset.
 
 <a id="custom-maps"></a>
 
@@ -108,7 +111,9 @@ Put each custom map folder in `ux0:data/deltalightplusvita/game_data/custom/` an
   <a href="#trophies-notrpdrm"><img src="docs/readme-headings/trophies-notrpdrm.svg" alt="TROPHIES (NOTRPDRM)" height="40"></a>
 </h3>
 
-With NoTrpDrm installed, the game is designed to register its trophy set on the first boot (a system dialog appears once) and unlock trophies as you play: each boss, each chapter, the first song, the first Determination Power, the first Lights Out and the first lost battle. Clearing every Undertale song is the final reward. The trophy list is also in Options → Data and at the café table, where in-game trophy notices can be turned on or off. If the trophy setup ever fails, delete `ux0:data/deltalightplusvita/trophy_disabled` to try again; the log is `logs/trophy.log`.
+With NoTrpDrm installed, the game is designed to register its trophy set on the first boot and unlock trophies as you play. The in-game trophy list is also available in Options → Data and through Swatchling, with optional notices.
+
+Native registration remains under validation: a setup timeout and a system data-corruption warning have been reported on hardware. The in-game list works independently. If setup was interrupted, the game skips native trophies on later boots. With the game closed, remove `ux0:data/deltalightplusvita/trophy_disabled` and `trophy_setup_attempt` from the same folder only when you want to retry. Diagnostics are in `ux0:data/deltalightplusvita/logs/trophy.log`.
 
 
 Install NoTrpDrm under `*main` in the active taiHEN `config.txt`, following the [plugin instructions](https://github.com/Rinnegatamante/NoTrpDrm#installation):
@@ -127,6 +132,8 @@ ux0:tai/NoTrpDrm.suprx
 <p align="center">
   <a href="https://raw.githubusercontent.com/WolffsRoom/DeltaruneLightnersVita/main/assets/control-layout.png"><img src="assets/control-layout.png" width="100%" alt="Lightners Live Plus Vita control layout" title="Open full-size image"></a>
 </p>
+
+In the song list, **Square** switches between soundtrack order and chart difficulty; **Triangle** previews a song, **START** changes its alternate music when available, and **SELECT** adds or removes a favourite. During a song, **Square** activates Determination Power.
 
 <a id="screenshots"></a>
 
@@ -153,6 +160,13 @@ Select a screenshot to open its full-size image directly.
   <tr>
     <td width="50%" align="center"><a href="https://raw.githubusercontent.com/WolffsRoom/DeltaruneLightnersVita/main/assets/screenshots/options.png"><img src="assets/screenshots/options.png" width="100%" alt="Options" title="Open full-size image"></a><br><sub>Options</sub></td>
     <td width="50%" align="center"><a href="https://raw.githubusercontent.com/WolffsRoom/DeltaruneLightnersVita/main/assets/screenshots/locked_chapter.png"><img src="assets/screenshots/locked_chapter.png" width="100%" alt="Chapter progression" title="Open full-size image"></a><br><sub>Chapter progression</sub></td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td width="50%" align="center"><a href="https://raw.githubusercontent.com/WolffsRoom/DeltaruneLightnersVita/main/assets/screenshots/game_options.png"><img src="assets/screenshots/game_options.png" width="100%" alt="Gameplay difficulty and options" title="Open full-size image"></a><br><sub>Gameplay difficulty and options</sub></td>
+    <td width="50%" align="center"><a href="https://raw.githubusercontent.com/WolffsRoom/DeltaruneLightnersVita/main/assets/screenshots/stage_chat.png"><img src="assets/screenshots/stage_chat.png" width="100%" alt="Conversation with the original stage cast" title="Open full-size image"></a><br><sub>Talk to the stage cast</sub></td>
   </tr>
 </table>
 
@@ -253,9 +267,11 @@ Select a screenshot to open its full-size image directly.
 - **The show:** every song opens on the Chapter 3 stage, with the band in silhouette, spotlights, the crowd and Tenna announcing the song.
 - **Fun-O-Meter and Determination Power:** good playing fills the Chapter 3 meter; press Square for glowing notes and double points. An empty meter means *Lights Out*.
 - **Boss battles:** boss songs stop for a real battle. The boss stands on the right with its own sprites, bullets and sounds, you dodge with the SOUL, hits cost points, grazes earn them, and the boss closes with a line in its own voice. Every Undertale song has its own fight.
+- **Gameplay difficulty:** Super easy disables error penalties and failure; Easy is more forgiving, Normal allows more misses before Lights Out, and Hard increases penalties. Choose a preset in Options → Game → Difficulty.
+- **Café:** talk to the original stage performers and ask Swatchling for the credits or trophy list. The café PC uses a short Chapter 2 sound.
 - **Story mode:** songs unlock in the official OST order; each chapter opens after the previous chapter's final boss, and Undertale after Chapter 4.
 - **CONCERT RESULTS:** the Chapter 3 evaluation screen with missed, normal and gold notes, longest combo, total score and rank.
-- **Trophies:** 30 native PS Vita trophies (NoTrpDrm), plus an optional in-game trophy list and notices.
+- **Trophies:** 30 trophy goals, an optional in-game list and notices, and native PS Vita integration through NoTrpDrm (registration remains under validation).
 - **Interface:** Deltarune-style title, options, song select (difficulty hearts, covers, favourites, song preview), dialog boxes with voices and loading screen, in English, Spanish and Brazilian Portuguese.
 
 <a id="original-game-vs-ps-vita-port"></a>
@@ -269,8 +285,8 @@ The songs, charts, scoring and save data are the original game's. The original w
 | | Original (PC) | PS Vita port |
 | :--- | :--- | :--- |
 | **Boot** | Starts straight in the café | Chapter 3 Lightners Live opening, then a title menu |
-| **Settings** | One panel with sliders | Tabbed Options (Audio, Game, Controls, Data) after a dialog with Swatch |
-| **Song select** | Scrolling text list | Chapter tabs, story unlocks, difficulty hearts, covers, favourites, preview |
+| **Settings** | One panel with sliders | Tabbed Options (Audio & Video, Game, Controls, Data), centered headings and four gameplay presets |
+| **Song select** | Scrolling text list | Chapter tabs, story unlocks, difficulty hearts, covers, favourites, preview and Square sorting |
 | **During a song** | Score and combo | Fun-O-Meter, Determination Power, SOUL, progress bar, boss battles |
 | **End of a song** | Score text | CONCERT RESULTS with rank, Retry / Café / Next song |
 | **Languages** | English | English, Spanish and Brazilian Portuguese |
@@ -309,7 +325,7 @@ Claude Code (Opus 5.5) and Codex (GPT-6.1 Sol) was used as a development assista
 
 ### LICENCES
 
-Butterscotch is distributed under the Mozilla Public License 2.0. Modified MPL-covered source files in this project remain available under the same license, with their copyright and license notices preserved. See [LICENSE](LICENSE) and the corresponding source files for details.
+This port uses Godot 4 Vita. [Godot Engine](docs/licenses/Godot-LICENSE.txt) is distributed under the MIT license; its bundled components retain their [own notices](docs/licenses/Godot-COPYRIGHT.txt). The loader also uses vitaGL under the [GNU LGPL v3](docs/licenses/vitaGL-COPYING.LESSER.txt), together with the [GNU GPL v3 terms](docs/licenses/vitaGL-COPYING.txt). Third-party license notices are included in the VPK.
 
 DELTARUNE, its characters, music and assets belong to their respective owners. This project does not distribute the commercial files required to play the game.
 

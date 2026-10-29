@@ -1,18 +1,21 @@
 # Development status — Lightners Live Plus for PS Vita
 
-**Current release: v1.0.** Tested on the PC build of the Vita data; report hardware issues with the logs in `ux0:data/deltalightplusvita/logs/`.
+**Current release: v1.0 (PCK22).** Earlier Vita logs informed these fixes. The final data and patcher are validated on PC; final device performance and native trophy registration still need hardware confirmation. Report device issues with `ux0:data/deltalightplusvita/logs/`.
 
 | Component | Current state |
 | :--- | :--- |
 | Boot / LiveArea | Animated 960 × 544 startup, custom LiveArea |
 | Opening | Recreation of the first Lightners Live stage from Chapter 3, then the title menu |
-| Menus | Deltarune-style title, options, song select, dialog boxes and loading screen |
+| Menus | Centered Audio & Video / Game / Controls / Data tabs; brightness and language with audio/video |
+| Gameplay difficulty | Super easy / Easy / Normal / Hard adjust error penalties and failure tolerance, including boss hits |
+| Café | Conversations with the original stage cast and expanded Swatchling banter |
+| Song selection | Square toggles soundtrack/chart-difficulty order; START retains alternate music; selected chart stays selected |
 | Songs | All 121 built-in songs; notes in sync with the music; hold notes drawn natively |
 | Story mode | Songs unlock in OST order; chapters open after their final boss |
-| Fun-O-Meter / Determination Power | Touch the SOUL to activate; double points |
+| Fun-O-Meter / Determination Power | Square activates it; prepared sounds/frames, bounded shine pool and trophy disk writes deferred until results |
 | Boss battles | King, Queen, Tenna, Titan and every Undertale song; grazing gives points |
 | Results | CONCERT RESULTS with rank |
-| Trophies | 30 trophies through NoTrpDrm |
+| Trophies | 30 goals and in-game list; native bridge checks cancellation, timeout, queue retention and retry backoff; registration remains unconfirmed |
 | Audio | Music, notes, character voices and UI sounds |
 | Loading | Game data packed into a single `game.pck` |
 | Custom maps | Same interface as the song select |
@@ -42,11 +45,19 @@ The trophy set (`DLLP40001_00`) is an unsigned local set for NoTrpDrm. The game 
 ## Known issues
 
 - Store and web links do not open anything on the Vita.
-- Touch on the SOUL and the trophy setup have not been confirmed on every console yet.
+- Supplied Vita logs show native trophy context creation succeeded, but setup timed out and a later interrupted attempt disabled native trophies. A system data-corruption warning was also reported. Native registration/unlock is not yet confirmed.
+- Power/font changes passed host rendering and gameplay checks; final Vita frame timing and memory usage still need verification.
 
 ## Public files policy
 
-This repository contains documentation only. No game files are provided; the release ships the VPK and the patcher.
+The public release ships the VPK and a patcher that reconstructs the data from the player's own copies of both games. The ready-made game-data archive is not a public release asset.
+
+## v1.0 validation
+
+- Generated package: 2,722 resource entries checked byte for byte, 121 song folders and 135 audio streams.
+- Godot checks cover settings, the three language layouts, gameplay/boss difficulty, original stage interactions, sorted selection identity, preview restart/volume restoration, font pages, bounded power effects, note timing and controller navigation.
+- Native bridge mock checks cover successful/canceled/timed-out setup, retry backoff and retention/acknowledgement of queued awards.
+- The rendered font probe used 1,179,648 atlas pixels at 1× sampling versus 26,345,472 at the previous 10× setting. This is a host measurement, not a Vita memory reading.
 
 ## References
 
