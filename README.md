@@ -52,7 +52,7 @@ _If you enjoy my work, consider supporting the development!_
 
 </div>
 
-**v1.0** includes four gameplay difficulty presets, reorganized Audio & Video settings, song sorting, conversations with the stage cast, and improvements to fonts and power effects. See the [release notes](https://github.com/WolffsRoom/DeltaruneLightnersVita/releases/tag/v1.0) and [development status](docs/PORT_STATUS.md) for validation details and remaining issues.
+**v1.0 now uses PCK24.** It includes four gameplay difficulty presets, reorganized Audio and Video settings, full song titles, larger button prompts, BOSS tags, revised Tenna and Sans battles, and conversations with the stage cast. During Determination Power, note rewards are doubled and error penalties are halved. The trophy configuration now totals 960 points to match its large-set policy. See the [release notes](https://github.com/WolffsRoom/DeltaruneLightnersVita/releases/tag/v1.0) and [development status](docs/PORT_STATUS.md) for validation details and remaining issues.
 
 <a id="installation-guide"></a>
 
@@ -66,11 +66,11 @@ _If you enjoy my work, consider supporting the development!_
   <a href="#requirements"><img src="docs/readme-headings/requirements.svg" alt="REQUIREMENTS" height="40"></a>
 </h3>
 
-- A homebrew-enabled PlayStation Vita with [VitaShell](https://github.com/TheOfficialFloW/VitaShell/releases);
-- A Windows x64 PC to run the patcher;
-- [kubridge](https://github.com/TheOfficialFloW/kubridge/releases/) under `*KERNEL` in taiHEN's `config.txt`;
-- [Deltarune: Lightners Live Plus 1.6.0.2](https://ezioeagle.itch.io/lightners-live-plus) for Windows (free);
-- [DELTARUNE](https://store.steampowered.com/app/1671210/) for PC (Steam) with Chapters 1–4 installed;
+- A homebrew-enabled PlayStation Vita with [VitaShell](https://github.com/TheOfficialFloW/VitaShell/releases).
+- A Windows x64 PC to run the patcher.
+- [kubridge](https://github.com/TheOfficialFloW/kubridge/releases/) under `*KERNEL` in taiHEN's `config.txt`.
+- [Deltarune: Lightners Live Plus 1.6.0.2](https://ezioeagle.itch.io/lightners-live-plus) for Windows (free).
+- [DELTARUNE](https://store.steampowered.com/app/1671210/) for PC (Steam) with Chapters 1-4 installed.
 - optional: [NoTrpDrm](https://github.com/Rinnegatamante/NoTrpDrm/releases) for trophies.
 
 ```text
@@ -95,7 +95,7 @@ The final path must be:
 ux0:data/deltalightplusvita/game_data/
 ```
 
-When updating, regenerate the data with the v1.0 patcher and install the matching VPK. Back up `game_data/custom` before copying files to the Vita; saves and port settings do not need to be reset.
+When updating, regenerate the data with the v1.0 patcher and install the matching VPK. Back up `game_data/custom` before copying files to the Vita. Saves and port settings do not need to be reset.
 
 <a id="custom-maps"></a>
 
@@ -113,7 +113,7 @@ Put each custom map folder in `ux0:data/deltalightplusvita/game_data/custom/` an
 
 With NoTrpDrm installed, the game is designed to register its trophy set on the first boot and unlock trophies as you play. The in-game trophy list is also available in Options → Data and through Swatchling, with optional notices.
 
-Native registration remains under validation: a setup timeout and a system data-corruption warning have been reported on hardware. The in-game list works independently. If setup was interrupted, the game skips native trophies on later boots. With the game closed, remove `ux0:data/deltalightplusvita/trophy_disabled` and `trophy_setup_attempt` from the same folder only when you want to retry. Diagnostics are in `ux0:data/deltalightplusvita/logs/trophy.log`.
+Native registration remains under validation. The earlier trophy pack declared a large set with only 705 points. PCK24 corrects that configuration to 960 points and keeps the same trophy IDs and objectives. The earlier NP-6185-5 report still needs a new registration test on the console with this corrected pack. The in-game list works independently. If setup was interrupted, the game skips native trophies on later boots. With the game closed, remove `ux0:data/deltalightplusvita/trophy_disabled` and `trophy_setup_attempt` from the same folder only when you want to retry. Diagnostics are in `ux0:data/deltalightplusvita/logs/trophy.log`.
 
 
 Install NoTrpDrm under `*main` in the active taiHEN `config.txt`, following the [plugin instructions](https://github.com/Rinnegatamante/NoTrpDrm#installation):
@@ -133,7 +133,7 @@ ux0:tai/NoTrpDrm.suprx
   <a href="https://raw.githubusercontent.com/WolffsRoom/DeltaruneLightnersVita/main/assets/control-layout.png"><img src="assets/control-layout.png" width="100%" alt="Lightners Live Plus Vita control layout" title="Open full-size image"></a>
 </p>
 
-In the song list, **Square** switches between soundtrack order and chart difficulty; **Triangle** previews a song, **START** changes its alternate music when available, and **SELECT** adds or removes a favourite. During a song, **Square** activates Determination Power.
+In the song list, **Square** switches between soundtrack order and chart difficulty. **Triangle** previews a song, **START** changes its alternate music when available, and **SELECT** adds or removes a favourite. During a song, **Square** activates Determination Power.
 
 <a id="screenshots"></a>
 
@@ -213,17 +213,22 @@ Select a screenshot to open its full-size image directly.
 <details>
 <summary>More screenshots: opening, dialogue, trophies and credits</summary>
 
+<p align="center">
+  <a href="https://raw.githubusercontent.com/WolffsRoom/DeltaruneLightnersVita/main/assets/screenshots/battle_sans.png"><img src="assets/screenshots/battle_sans.png" width="70%" alt="Sans and bone attacks in MEGALOVANIA" title="Open full-size image"></a><br>
+  <sub>Sans and bone attacks in MEGALOVANIA</sub>
+</p>
+
 <table>
   <tr>
     <td width="50%" align="center"><a href="https://raw.githubusercontent.com/WolffsRoom/DeltaruneLightnersVita/main/assets/screenshots/intro.png"><img src="assets/screenshots/intro.png" width="100%" alt="Opening show" title="Open full-size image"></a><br><sub>Opening show</sub></td>
-    <td width="50%" align="center"><a href="https://raw.githubusercontent.com/WolffsRoom/DeltaruneLightnersVita/main/assets/screenshots/boss_line.png"><img src="assets/screenshots/boss_line.png" width="100%" alt="The boss&#x27;s closing line" title="Open full-size image"></a><br><sub>The boss&#x27;s closing line</sub></td>
+    <td width="50%" align="center"><a href="https://raw.githubusercontent.com/WolffsRoom/DeltaruneLightnersVita/main/assets/screenshots/boss_line.png"><img src="assets/screenshots/boss_line.png" width="100%" alt="The boss's closing line" title="Open full-size image"></a><br><sub>The boss's closing line</sub></td>
   </tr>
 </table>
 
 <table>
   <tr>
     <td width="50%" align="center"><a href="https://raw.githubusercontent.com/WolffsRoom/DeltaruneLightnersVita/main/assets/screenshots/trophy.png"><img src="assets/screenshots/trophy.png" width="100%" alt="In-game trophy notice" title="Open full-size image"></a><br><sub>In-game trophy notice</sub></td>
-    <td width="50%" align="center"><a href="https://raw.githubusercontent.com/WolffsRoom/DeltaruneLightnersVita/main/assets/screenshots/welcome.png"><img src="assets/screenshots/welcome.png" width="100%" alt="Flowey&#x27;s closing line" title="Open full-size image"></a><br><sub>Flowey&#x27;s closing line</sub></td>
+    <td width="50%" align="center"><a href="https://raw.githubusercontent.com/WolffsRoom/DeltaruneLightnersVita/main/assets/screenshots/welcome.png"><img src="assets/screenshots/welcome.png" width="100%" alt="Flowey's closing line" title="Open full-size image"></a><br><sub>Flowey's closing line</sub></td>
   </tr>
 </table>
 
@@ -248,12 +253,12 @@ Select a screenshot to open its full-size image directly.
   <img src="assets/gifs/boot_menu.gif" width="45%" alt="Boot: Chapter 3 opening and title menu">
   <img src="assets/gifs/song_select.gif" width="45%" alt="Song select, preview and the show opening">
   <br>
-  <sub><b>Boot and title menu</b>: the Chapter 3 opening, then Start Game / Options / Credits. &nbsp; <b>Song select</b>: a locked song, the preview on △ and the show opening.</sub>
+  <sub><b>Boot and title menu</b>: the Chapter 3 opening, then Start Game / Options / Credits.   <b>Song select</b>: a locked song, the preview on △ and the show opening.</sub>
   <br><br>
   <img src="assets/gifs/boss_battle.gif" width="45%" alt="Boss battle against the King">
   <img src="assets/gifs/undertale_battle.gif" width="45%" alt="Undertale battle against Sans">
   <br>
-  <sub><b>Boss battle</b>: playing Chaos King, then the King's side spades and sky chains. &nbsp; <b>Undertale battle</b>: MEGALOVANIA, Sans and his bones.</sub>
+  <sub><b>Boss battle</b>: playing Chaos King, then the King's side spades and sky chains.   <b>Undertale battle</b>: MEGALOVANIA, Sans and his bones.</sub>
 </p>
 
 <a id="about-the-port"></a>
@@ -265,11 +270,11 @@ Select a screenshot to open its full-size image directly.
 *Deltarune: Lightners Live Plus* is a fan-made rhythm game by **EzioEagle**, built around the *Lightners Live* minigame from DELTARUNE Chapter 3, with songs from every chapter and Undertale. The port runs the original game's songs, charts and scoring on the Vita and builds a full show around them:
 
 - **The show:** every song opens on the Chapter 3 stage, with the band in silhouette, spotlights, the crowd and Tenna announcing the song.
-- **Fun-O-Meter and Determination Power:** good playing fills the Chapter 3 meter; press Square for glowing notes and double points. An empty meter means *Lights Out*.
+- **Fun-O-Meter and Determination Power:** good playing fills the Chapter 3 meter. Press Square for glowing notes and double points. An empty meter means *Lights Out*.
 - **Boss battles:** boss songs stop for a real battle. The boss stands on the right with its own sprites, bullets and sounds, you dodge with the SOUL, hits cost points, grazes earn them, and the boss closes with a line in its own voice. Every Undertale song has its own fight.
-- **Gameplay difficulty:** Super easy disables error penalties and failure; Easy is more forgiving, Normal allows more misses before Lights Out, and Hard increases penalties. Choose a preset in Options → Game → Difficulty.
+- **Gameplay difficulty:** Super easy disables error penalties and failure. Easy is more forgiving, Normal allows more misses before Lights Out, and Hard increases penalties. Choose a preset in Options → Game → Difficulty.
 - **Café:** talk to the original stage performers and ask Swatchling for the credits or trophy list. The café PC uses a short Chapter 2 sound.
-- **Story mode:** songs unlock in the official OST order; each chapter opens after the previous chapter's final boss, and Undertale after Chapter 4.
+- **Story mode:** songs unlock in the official OST order. Each chapter opens after the previous chapter's final boss, and Undertale after Chapter 4.
 - **CONCERT RESULTS:** the Chapter 3 evaluation screen with missed, normal and gold notes, longest combo, total score and rank.
 - **Trophies:** 30 trophy goals, an optional in-game list and notices, and native PS Vita integration through NoTrpDrm (registration remains under validation).
 - **Interface:** Deltarune-style title, options, song select (difficulty hearts, covers, favourites, song preview), dialog boxes with voices and loading screen, in English, Spanish and Brazilian Portuguese.
@@ -285,7 +290,7 @@ The songs, charts, scoring and save data are the original game's. The original w
 | | Original (PC) | PS Vita port |
 | :--- | :--- | :--- |
 | **Boot** | Starts straight in the café | Chapter 3 Lightners Live opening, then a title menu |
-| **Settings** | One panel with sliders | Tabbed Options (Audio & Video, Game, Controls, Data), centered headings and four gameplay presets |
+| **Settings** | One panel with sliders | Tabbed Options (Audio and Video, Game, Controls, Data), centered headings and four gameplay presets |
 | **Song select** | Scrolling text list | Chapter tabs, story unlocks, difficulty hearts, covers, favourites, preview and Square sorting |
 | **During a song** | Score and combo | Fun-O-Meter, Determination Power, SOUL, progress bar, boss battles |
 | **End of a song** | Score text | CONCERT RESULTS with rank, Retry / Café / Next song |
@@ -300,7 +305,7 @@ The songs, charts, scoring and save data are the original game's. The original w
   <a href="#technical-background"><img src="docs/readme-headings/technical-background.svg" alt="TECHNICAL BACKGROUND" height="40"></a>
 </h3>
 
-The port runs the original Godot content through [Godot 4 Vita](https://github.com/WolffsRoom/godot4-vita) (a Godot 4.8 development build loaded by a small Vita executable) with a native [GXM](https://www.psdevwiki.com/vita/SceGxm) 2D renderer, which draws rectangles and textured sprites only; every new screen is built from those two primitives. Charts are MIDI files read by a portable reader with the note clock calibrated to the audio, the data ships as one `game.pck`, and trophies are unlocked by the loader through NoTrpDrm.
+The port runs the original Godot content through [Godot 4 Vita](https://github.com/WolffsRoom/godot4-vita) (a Godot 4.8 development build loaded by a small Vita executable) with a native [GXM](https://www.psdevwiki.com/vita/SceGxm) 2D renderer, which draws rectangles and textured sprites only. Every new screen is built from those two primitives. Charts are MIDI files read by a portable reader with the note clock calibrated to the audio, the data ships as one `game.pck`, and trophies are unlocked by the loader through NoTrpDrm.
 
 <a id="credits"></a>
 
@@ -319,13 +324,21 @@ The port runs the original Godot content through [Godot 4 Vita](https://github.c
 
 ---
 
-### IA NOTICE
+<a id="ia-notice"></a>
 
-Claude Code (Opus 5.5) and Codex (GPT-6.1 Sol) was used as a development assistant for diagnostics, implementation support, project organization and technical documentation.
+<h3>
+  <a href="#ia-notice"><img src="docs/readme-headings/ia-notice.svg" alt="IA NOTICE" height="40"></a>
+</h3>
 
-### LICENCES
+Claude Code (Opus 5.5) and Codex (GPT-6.1 Sol) were used as development assistants for diagnostics, implementation support, project organization and technical documentation.
 
-This port uses Godot 4 Vita. [Godot Engine](docs/licenses/Godot-LICENSE.txt) is distributed under the MIT license; its bundled components retain their [own notices](docs/licenses/Godot-COPYRIGHT.txt). The loader also uses vitaGL under the [GNU LGPL v3](docs/licenses/vitaGL-COPYING.LESSER.txt), together with the [GNU GPL v3 terms](docs/licenses/vitaGL-COPYING.txt). Third-party license notices are included in the VPK.
+<a id="licences"></a>
+
+<h3>
+  <a href="#licences"><img src="docs/readme-headings/licences.svg" alt="LICENCES" height="40"></a>
+</h3>
+
+This port uses Godot 4 Vita. [Godot Engine](docs/licenses/Godot-LICENSE.txt) is distributed under the MIT license. Its bundled components retain their [own notices](docs/licenses/Godot-COPYRIGHT.txt). The loader also uses vitaGL under the [GNU LGPL v3](docs/licenses/vitaGL-COPYING.LESSER.txt), together with the [GNU GPL v3 terms](docs/licenses/vitaGL-COPYING.txt). Third-party license notices are included in the VPK.
 
 DELTARUNE, its characters, music and assets belong to their respective owners. This project does not distribute the commercial files required to play the game.
 
@@ -335,7 +348,7 @@ DELTARUNE, its characters, music and assets belong to their respective owners. T
 
 <p align="center">
   <sub>
-    DELTARUNE © Toby Fox 2018–2026. All rights reserved.<br>
+    DELTARUNE © Toby Fox 2018-2026. All rights reserved.<br>
     This is an **unofficial fan project**, not affiliated with or endorsed by EzioEagle, Toby Fox, Sony, or the Godot Engine project.
   </sub>
 </p>
