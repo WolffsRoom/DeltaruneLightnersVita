@@ -1,7 +1,6 @@
 <p align="center">
   <a href="#">
-    <img  width="500" alt="LogoDeltaruneVita" src="https://github.com/user-attachments/assets/9e7530da-7567-4d46-9c91-7a706dacb5a3" alt="Logo Deltarune: Lightners Live Plus PSVita Edition" width="500"/>
-
+    <img  width="500" alt="LogoDeltaruneVita" src="https://github.com/user-attachments/assets/66de7218-7bf2-4e9e-a4e7-8664c67ff77c" alt="Logo Deltarune: Lightners Live Plus PSVita Edition" width="500"/>
   </a>
 </p>
 
